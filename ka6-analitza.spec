@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		analitza
 Summary:	Analitza
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	0164268daa9883a96650c2aabef4039c
+# Source0-md5:	fa868231de779dea552b4425140687a1
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -89,13 +89,13 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %ghost %{_libdir}/libAnalitza.so.9
-%attr(755,root,root) %{_libdir}/libAnalitza.so.*.*
+%{_libdir}/libAnalitza.so.*.*
 %ghost %{_libdir}/libAnalitzaGui.so.9
-%attr(755,root,root) %{_libdir}/libAnalitzaGui.so.*.*
+%{_libdir}/libAnalitzaGui.so.*.*
 %ghost %{_libdir}/libAnalitzaPlot.so.9
-%attr(755,root,root) %{_libdir}/libAnalitzaPlot.so.*.*
+%{_libdir}/libAnalitzaPlot.so.*.*
 %ghost %{_libdir}/libAnalitzaWidgets.so.9
-%attr(755,root,root) %{_libdir}/libAnalitzaWidgets.so.*.*
+%{_libdir}/libAnalitzaWidgets.so.*.*
 %dir %{_libdir}/qt6/qml/org/kde/analitza
 %{_libdir}/qt6/qml/org/kde/analitza/Graph2D.qml
 %{_libdir}/qt6/qml/org/kde/analitza/Graph3D.qml
